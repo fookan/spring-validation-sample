@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <title>テスト</title>
+</head>
+<body>
+<form th:action="@{/}" method="post" th:object="${sampleForm}">
+  <label>code:</label>
+  <input type="text" th:field="*{code}"><br />
+  <p><span th:if="${#fields.hasErrors('code')}" th:errors="*{code}"></span></p>
+  <label>number</label>
+  <input type="text" th:field="*{number}"><br />
+  <p><span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span></p>
+  <input type="text" th:field="*{number2}"><br />
+  <p><span th:if="${#fields.hasErrors('number2')}" th:errors="*{number2}"></span></p>
+  <input type="text" th:field="*{amount}"><br />
+  <p><span th:if="${#fields.hasErrors('amount')}" th:errors="*{amount}"></span></p>
+  <button type="submit">送信</button>
+</form>
+</body>
+</html>
