@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>バリデーションのパターンマッチのチェック</title>
+</head>
+<body>
+  <form th:object="${patternData}" th:action="@{/pattern}" th:method="get">
+    <label>number</label><input type="text" th:field="*{number}" /><br />
+    <p><span th:if="${#fields.hasErrors('number')}" th:errors="*{number}"></span></p>
+    <label>file</label><input type="text" th:field="*{fileName}" /><br />
+    <p><sfpan th:if="${#fields.hasErrors('fileName')}" th:errors="*{fileName}"></span></p>
+    <label>date</label><input type="text" th:field="*{date}" /><br />
+    <p><span th:if="${#fields.hasErrors('date')}" th:errors="*{date}"></span></p>
+    <label>dateTime</label><input type="text" th:field="*{dateTime}" /><br />
+    <p><span th:if="${#fields.hasErrors('dateTime')}" th:errors="*{dateTime}"></span></p>
+    <label>test</label><input type="text" th:field="*{test}" /><br />
+    <p><span th:if="${#fields.hasErrors('test')}" th:errors="*{test}"></span></p>
+
+    <button type="submit">送信</button>
+  </form>
+</body>
+</html>
